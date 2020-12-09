@@ -44,7 +44,7 @@ namespace WebVisitCounter
                 options.AddPolicy("PersonalPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("http://mathewjenik.atwebpages.com/").AllowAnyHeader()
+                        builder.WithOrigins("http://mathewjenik.atwebpages.com").AllowAnyHeader()
                                         .AllowAnyMethod();
                     });
 
@@ -57,9 +57,8 @@ namespace WebVisitCounter
 
             });
 
-           
-                
-          
+
+
 
             /*
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -92,6 +91,8 @@ namespace WebVisitCounter
             app.UseRouting();
 
             app.UseCors();
+
+
 
             app.UseAuthentication();
             app.UseAuthorization();
