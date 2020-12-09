@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebVisitCounter.Data;
+using Microsoft.AspNetCore.Cors;
 
 namespace WebVisitCounter.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("PersonalPolicy")]
     public class APIWebsitesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

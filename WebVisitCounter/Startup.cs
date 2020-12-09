@@ -38,6 +38,19 @@ namespace WebVisitCounter
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("PersonalPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://mathewjenik.atwebpages.com/");
+                    });
+
+            });
+
+
+
             /*
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
@@ -67,6 +80,8 @@ namespace WebVisitCounter
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthentication();
             app.UseAuthorization();
