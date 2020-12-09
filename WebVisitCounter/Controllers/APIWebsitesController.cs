@@ -12,7 +12,7 @@ namespace WebVisitCounter.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("PersonalPolicy")]
+    
     public class APIWebsitesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -30,6 +30,7 @@ namespace WebVisitCounter.Controllers
         }
 
         // GET: api/APIWebsites/5
+        [EnableCors("PersonalPolicy")]
         [HttpGet("get/{id}")]
         public async Task<ActionResult<Website>> GetWebsite(int id)
         {
