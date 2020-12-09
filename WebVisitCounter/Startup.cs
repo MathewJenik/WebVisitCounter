@@ -48,9 +48,18 @@ namespace WebVisitCounter
                                         .AllowAnyMethod();
                     });
 
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("*");
+                    });
+                
+
             });
 
-
+           
+                
+          
 
             /*
             services.AddDbContext<ApplicationDbContext>(options =>
