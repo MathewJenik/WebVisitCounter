@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Cors;
 
 namespace WebVisitCounter.Controllers
 {
+    [EnableCors("PersonalPolicy")]
     [Route("api/[controller]")]
     [ApiController]
-    
     public class APIWebsitesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
