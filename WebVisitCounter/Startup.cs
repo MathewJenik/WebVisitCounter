@@ -44,7 +44,8 @@ namespace WebVisitCounter
                 options.AddPolicy("PersonalPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("http://mathewjenik.atwebpages.com/");
+                        builder.WithOrigins("http://mathewjenik.atwebpages.com/").AllowAnyHeader()
+                                        .AllowAnyMethod();
                     });
 
             });
